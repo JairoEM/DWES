@@ -42,24 +42,26 @@
     echo "<h3>Excercice 3</h3>";
 
     $colors = array(array("Sharp Colors", "Light Colors"),
-    array("Red: FF0000", "Green: 00FF00", "Blue: 0000FF",
-    "Pink: FE9ABC", "Yellow: FDF189", "Mallow: BC8F8F"));
+    array("#FF0000", "#00FF00", "#0000FF",
+    "#FE9ABC", "#FDF189", "#BC8F8F"));
 
     echo "<table cellspading='2' border='2'>";
+    
+    $auxColours = 0;
+
     for($i=0; $i<=count($colors)-1; $i++){
         echo "<tr height='40'>";
-        
-        if($i==0){
-            for($j=0; $j<=3; $j++){
-                echo "<td width='40'>";
-                echo $colors[$i][$j];
+
+        for($j=0; $j<=3; $j++){
+            echo "<td width='40'>";
+            echo $colors[$i][0];
+            echo "</td>";
+
+            for($k=0; $k<=3; $k++){
+                echo "<td width='40' bgcolor='".$colors[1][$auxColours]."'>";
+                echo $colors[1][$auxColours];
                 echo "</td>";
-            }
-        }else{
-            for($k=4; $j<=7; $k++){
-                echo "<td width='40'>";
-                echo $colors[$i][$j];
-                echo "</td>";
+                $auxColours++;
             }
         }
 
