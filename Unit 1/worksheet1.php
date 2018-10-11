@@ -3,7 +3,7 @@
 
     echo "<h1>Woorksheet 1</h1>";
 
-    echo "<h3>Excercice 1</h3>";
+    echo "<h3>Excercise 1</h3>";
 
     $week = array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 
@@ -18,7 +18,7 @@
     }
 
 
-    echo "<h3>Excercice 2</h3>";
+    echo "<h3>Excercise 2</h3>";
 
     $students = array("Jairo", "Victor", "Alejandro", "Maria del Carmen", "Tipo de Incognito");
 
@@ -39,7 +39,7 @@
     }
 
 
-    echo "<h3>Excercice 3</h3>";
+    echo "<h3>Excercise 3</h3>";
 
     $colors = array(array("Sharp Colors", "Light Colors"),
     array("#FF0000", "#00FF00", "#0000FF",
@@ -52,18 +52,16 @@
     for($i=0; $i<=count($colors)-1; $i++){
         echo "<tr height='40'>";
 
-        for($j=0; $j<=3; $j++){
             echo "<td width='40'>";
-            echo $colors[$i][0];
+            echo $colors[0][$i];
             echo "</td>";
 
-            for($k=0; $k<=3; $k++){
+            for($j=0; $j<=2; $j++){
                 echo "<td width='40' bgcolor='".$colors[1][$auxColours]."'>";
                 echo $colors[1][$auxColours];
                 echo "</td>";
                 $auxColours++;
             }
-        }
 
         echo "</tr>";
     }
