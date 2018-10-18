@@ -61,6 +61,33 @@
 
     // Exercise 2
     echo "<h2>Exercise 2</h2>";
-    
 
+    $phrase = "Bienvenidos a la aventura de aprender PHP en 30 horas";
+    
+    echo "<h3>Exercise 2.1</h3>";
+    $auxLength = strlen($phrase)/3;
+    $pos = substr($phrase, intval($auxLength), -intval($auxLength));
+    echo "Show the middle of the phrase: '$pos'";
+
+    echo "<h3>Exercise 2.2</h3>";
+    $pos = stripos($phrase, "PHP");
+    echo "The first 'PHP' was on $pos position.";
+
+    echo "<h3>Exercise 2.2</h3>";
+    $pos = str_replace("aventura", "<b>mision</b>", $phrase);
+    echo "If we change 'aventura' for 'mision' the phrase will be '$pos'";
+
+
+    // Exercise 3
+    echo "<h2>Exercise 3</h2>";
+
+    function $exercise3f($status){
+        if($status == "hola"){
+            return "trae";
+        }
+    }
+
+    $link = "<a href='/arbol/prueba.php' class='prueba' onmouseOver='$exercise3f($status)'>Prueba de Enlace</a>";
+    echo $link;
+    echo htmlentities($link);
 ?>
