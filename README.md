@@ -1,2 +1,2 @@
 # DWES
-Places where I am gonna upload all my class excercices (PHP).
+Place where I am gonna upload all my class excercices (PHP).
