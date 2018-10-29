@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>From</title>
+</head>
+<body>
+    <form action="./ejercicio1-resultados.php" method="POST" enctype="multipart/form-data">
+        <h2>Elementos de tipo INPUT</h2>
+        <h3>TEXT</h3>
+        <p>Introduzca la cadena a buscar:</p><input type="text" name="string">
+        <h3>RADIO</h3>
+        <p>Sexo:</p><input type="radio" name="gender" value="woman">Mujer <input type="radio" name="gender" value="man">Hombre
+        <h3>CHECKBOX</h3>
+        <p>Extras:</p><input type="checkbox" name="extra" id="">Garaje <input type="checkbox" name="extra" id="">Piscina <input type="checkbox" name="extra" id="">Jardín
+        <h3>FILE</h3>
+        <p>Fichero:</p><input type="file" name="file" id="">
+        <h3>HIDDEN</h3>
+        <input type="hidden" name="hidden">
+        <h3>PASSWORD</h3>
+        <p>Contraseña:</p><input type="password" name="pass" id="">
+        
+        <hr>
+
+        <h2>Elementos de tipo SELECT</h2>
+        <h3>SELECT SIMPLE</h3>
+        <p>Color:</p>
+        <select name="selectSimple" id="">
+            <option value="red">Rojo</option>
+            <option value="yellow">Amarillo</option>
+            <option value="purple" selected>Morado</option>
+        </select>
+        <h3>SELECT MÚLTIPLE</h3>
+        <p>Idiomas:</p>
+        <select name="selectMultiple" id="" multiple>
+            <option value="english">Inglés</option>
+            <option value="spanish">Español</option>
+            <option value="french">Francés</option>
+        </select>
+
+        <hr>
+
+        <h2>Elemento de tipo TEXTAREA</h2>
+        <p>Comentario:</p><textarea name="textArea" id="" cols="30" rows="10"></textarea>
+
+        <hr>
+        <input type="submit" value="Enviar Datos"> <input type="reset" value="Borrar Datos">
+    </form>
+</body>
+</html>
