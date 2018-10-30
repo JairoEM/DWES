@@ -8,44 +8,60 @@
 </head>
 <body>
     <form action="./ejercicio1-resultados.php" method="POST" enctype="multipart/form-data">
-        <h2>Elementos de tipo INPUT</h2>
-        <h3>TEXT</h3>
-        <p>Introduzca la cadena a buscar:</p><input type="text" name="string">
-        <h3>RADIO</h3>
-        <p>Sexo:</p><input type="radio" name="gender" value="woman">Mujer <input type="radio" name="gender" value="man">Hombre
-        <h3>CHECKBOX</h3>
-        <p>Extras:</p><input type="checkbox" name="extra" id="">Garaje <input type="checkbox" name="extra" id="">Piscina <input type="checkbox" name="extra" id="">Jardín
-        <h3>FILE</h3>
-        <p>Fichero:</p><input type="file" name="file" id="">
-        <h3>HIDDEN</h3>
-        <input type="hidden" name="hidden">
-        <h3>PASSWORD</h3>
-        <p>Contraseña:</p><input type="password" name="pass" id="">
-        
-        <hr>
 
-        <h2>Elementos de tipo SELECT</h2>
-        <h3>SELECT SIMPLE</h3>
-        <p>Color:</p>
-        <select name="selectSimple" id="">
-            <option value="red">Rojo</option>
-            <option value="yellow">Amarillo</option>
-            <option value="purple" selected>Morado</option>
-        </select>
-        <h3>SELECT MÚLTIPLE</h3>
-        <p>Idiomas:</p>
-        <select name="selectMultiple" id="" multiple>
-            <option value="english">Inglés</option>
-            <option value="spanish">Español</option>
-            <option value="french">Francés</option>
-        </select>
+        <fieldset>
+            <legend>Elementos de tipo INPUT</legend>
+            <h3>TEXT</h3>
+            Introduzca la cadena a buscar: <input type="text" name="string">
+            <hr>
 
-        <hr>
+            <h3>RADIO</h3>
+            Sexo: <input type="radio" name="gender" value="woman">Mujer <input type="radio" name="gender" value="man">Hombre
+            <hr>
 
-        <h2>Elemento de tipo TEXTAREA</h2>
-        <p>Comentario:</p><textarea name="textArea" id="" cols="30" rows="10"></textarea>
+            <h3>CHECKBOX</h3>
+            Extras: 
+            <input type="checkbox" name="extra[]" id="" value="garage">Garaje 
+            <input type="checkbox" name="extra[]" id="" value="swimmingpool">Piscina 
+            <input type="checkbox" name="extra[]" id="" value="garden">Jardín
+            <hr>
+            
+            <h3>FILE</h3>
+            Fichero: <input type="file" name="file" id="">
 
-        <hr>
+            <h3>HIDDEN</h3>
+            <input type="hidden" name="hidden">
+            <hr>
+
+            <h3>PASSWORD</h3>
+            Contraseña: <input type="password" name="pass" id="">
+        </fieldset>
+
+        <fieldset>
+            <legend>Elementos de tipo SELECT</legend>
+            <h3>SELECT SIMPLE</h3>
+            Color: 
+            <select name="selectSimple" id="">
+                <option value="red">Rojo</option>
+                <option value="yellow">Amarillo</option>
+                <option value="purple" selected>Morado</option>
+            </select>
+            <hr>
+
+            <h3>SELECT MÚLTIPLE</h3>
+            Idiomas: 
+            <select name="selectMultiple[]" id="" multiple>
+                <option value="english">Inglés</option>
+                <option value="spanish">Español</option>
+                <option value="french">Francés</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Elemento de tipo TEXTAREA</legend>
+            Comentario: <textarea name="textArea" id="" cols="30" rows="10"></textarea>
+        </fieldset>
+
         <input type="submit" value="Enviar Datos"> <input type="reset" value="Borrar Datos">
     </form>
 </body>
