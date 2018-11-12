@@ -21,15 +21,11 @@
 
         $handle = fopen($phonebook, "r");
         $linecount = 0;
-        // function lineCount($handle, $linecount){
-            while(!feof($handle)){
-                $line = fgets($handle);
-                $linecount++;
-            }
-            fclose($handle);
-        //     echo $linecount;
-        // }  
-        // lineCount($handle, $linecount);
+        while(!feof($handle)){
+            $line = fgets($handle);
+            $linecount++;
+        }
+        fclose($handle);
 
         echo "Our file have a size of ".filesize($phonebook)." KBs.<br>";
         echo "Our file have ".$linecount.", lines.<br>";
