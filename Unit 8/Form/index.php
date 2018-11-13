@@ -15,7 +15,7 @@
 
         $phonebook = "./phonebook.txt";
 
-        $save = fopen($phonebook, "a");
+        $save = fopen($phonebook, "a+");
         fwrite($save,"Nombre: ".$name."\r\nSurname: ".$surname."\r\nPhone: ".$phone."\r\n");
         fclose($save);
 

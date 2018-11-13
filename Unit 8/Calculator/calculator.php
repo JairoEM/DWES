@@ -13,6 +13,26 @@
         $operation = $_POST["operation"];
         $secondNumber = $_POST["sNumber"];
 
+        if(isset($_POST["send"])){
+            if(isset($_POST["count"])){
+                $txt = "./operations.txt";
+
+                $save = fopen($txt, "a+");
+                fwrite($save, 0."\r\n");
+                fclose($save);
+
+                $handle = fopen($txt, "r");
+                $linecount = 0;
+                while(!feof($handle)){
+                    $line = fgets($handle);
+                    $linecount++;
+                }
+                fclose($handle);
+
+                echo "You made ".$linecount." operations.<br>";
+            }
+        }
+
         $fNumber = intval($firstNumber);
         $sNumber = intval($secondNumber);
 
@@ -39,7 +59,8 @@
         <label for="fNumber">First Number: </label> <input type="number" name="fNumber" id="">
         <label for="operation">Operation (Add, Subtract, Multiply or Divide): </label> <input type="text" name="operation" id="">
         <label for="sNumber">Second Number: </label> <input type="number" name="sNumber" id="">
-        <input type="submit" value="Send">
+        <input type="hidden" name="count">
+        <input type="submit" name="send" value="Send">
     </form>
     
 </body>
