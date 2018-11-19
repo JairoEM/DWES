@@ -26,7 +26,7 @@
         ];
 
         foreach ($peliculas as $genero => $value) {
-            echo("<h1>Genero: $genero</h1>");
+            echo("<h1>Pelícuas de $genero</h1>");
             foreach ($value as $keys => $values) {
                 echo("Pelicula: $values <br>");
             }
