@@ -11,10 +11,9 @@
         // Ejercicio 1
         
         $usuario = "root";
-        $contrasena = "tu_contraseña";
+        $contrasena = "";
         $servidor = "localhost";
         $basededatos = "estudiante";
-        
         
         // Ejercicio 2
         
@@ -82,9 +81,18 @@
 
         <?php
             // Ejercicio 6
-        
+            $usuario = "root";
+            $contrasena = "";
+            $servidor = "localhost";
+            $basededatos = "estudiante";
+
+
+
             $consultaApellidos = "SELECT * FROM estudiante ORDER BY Apellidos ASC";
             $resultado = mysqli_query($conexion, $consultaApellidos) or die ( "Algo ha ido mal en la consulta a la base de datos");
+
+            $conexion = mysqli_connect($servidor, $usuario, "") or die ("No se ha podido conectar al servidor de Base de datos");
+            $db = mysqli_select_db($conexion, $basededatos) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
 
             while($mostrar = mysqli_fetch_array($resultado)){
                 ?>
@@ -101,6 +109,7 @@
                 
                 <?php
             }
+            mysqli_close($conexion);
         ?>
     </table>
 </body>
