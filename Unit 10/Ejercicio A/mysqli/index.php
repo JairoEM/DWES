@@ -13,7 +13,7 @@
         $usuario = "root";
         $contrasena = "";
         $servidor = "localhost";
-        $basededatos = "estudiante";
+        $basededatos = "instituto";
         
         // Ejercicio 2
         
@@ -21,12 +21,14 @@
         
         // Ejercicio 3
         
-        $conexion = mysqli_connect($servidor, $usuario, "") or die ("No se ha podido conectar al servidor de Base de datos");
+        $conexion = mysqli_connect($servidor, $usuario, $contrasena) or die ("No se ha podido conectar al servidor de Base de datos");
         $db = mysqli_select_db($conexion, $basededatos) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
     
         // Ejercicio 5
         
         $consulta = "SELECT Nombre, Apellidos FROM estudiante";
+        $resultado = mysqli_query($conexion, $consulta) or die ( "Algo ha ido mal en la consulta a la base de datos");
+        echo "$resultado";
 
         // Ejercicio 4
 
@@ -39,8 +41,12 @@
         $fecha = $_POST["fecha"];
         $id = $_POST["id"];
 
-        $sql = "INSERT INTO Students (Nombre, Apellidos, Email, Telefono, Tutor, Grupo, FechaDeInicio, IdEstudiante) 
+        $insert = "INSERT INTO estudiante (Nombre, Apellidos, Email, Telefono, Tutor, Grupo, FechaDeInicio, IdEstudiante) 
             VALUES ($nombre, $apellidos, $email, $telefono, $tutor, $grupo, $fecha, $id)";
+
+        $resultadoInsert = mysqli_query($conexion, $insert) or die ( "Algo ha ido mal en el insert a la base de datos");
+
+        mysqli_close($conexion);
     ?>
                 
     <form action="#" method="POST" enctype="multipart/form-data">
@@ -60,7 +66,8 @@
         <label for="">Fecha de Inicio:</label> <br>
         <input type="datetime" name="" id="fecha"> <br> <br>
         <label for="">ID Estudiante:</label>
-        <input type="number" name="" id="id">
+        <input type="number" name="" id="id"> <br> <br>
+        <input type="submit" value="Insertar Valores">
     </form>
 
     <br>
@@ -86,12 +93,10 @@
             $servidor = "localhost";
             $basededatos = "estudiante";
 
-
-
             $consultaApellidos = "SELECT * FROM estudiante ORDER BY Apellidos ASC";
             $resultado = mysqli_query($conexion, $consultaApellidos) or die ( "Algo ha ido mal en la consulta a la base de datos");
 
-            $conexion = mysqli_connect($servidor, $usuario, "") or die ("No se ha podido conectar al servidor de Base de datos");
+            $conexion = mysqli_connect($servidor, $usuario, $contrasena) or die ("No se ha podido conectar al servidor de Base de datos");
             $db = mysqli_select_db($conexion, $basededatos) or die ( "Upps! Pues va a ser que no se ha podido conectar a la base de datos" );
 
             while($mostrar = mysqli_fetch_array($resultado)){
@@ -103,8 +108,8 @@
                         <td><?php echo $mostrar['Telefono'] ?></td>
                         <td><?php echo $mostrar['Tutor'] ?></td>
                         <td><?php echo $mostrar['Grupo'] ?></td>
-                        <td><?php echo $mostrar['Fecha de Inicio'] ?></td>
-                        <td><?php echo $mostrar['ID Estudiante'] ?></td>
+                        <td><?php echo $mostrar['FechaDeInicio'] ?></td>
+                        <td><?php echo $mostrar['IdEstudiante'] ?></td>
                     </tr>
                 
                 <?php

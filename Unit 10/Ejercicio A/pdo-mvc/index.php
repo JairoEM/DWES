@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>                 
-    <form action="./main.php" method="POST" enctype="multipart/form-data">
+    <form action="insertOnTable()" method="POST" enctype="multipart/form-data">
         <legend>Nuevo Estudiante</legend>
         <label for="">Nombre:</label> <br>
         <input type="text" name="" id="nombre"> <br> <br>
@@ -24,13 +24,14 @@
         <label for="">Fecha de Inicio:</label> <br>
         <input type="datetime" name="" id="fecha"> <br> <br>
         <label for="">ID Estudiante:</label>
-        <input type="number" name="" id="id">
+        <input type="number" name="" id="id"> <br> <br>
+        <input type="submit" value="Insertar Valores">
     </form>
 
     <br>
 
-    <button onclick="">Mostrar Base de Datos</button>
+    <button onclick="showTable()">Mostrar Base de Datos</button>
 
-    <?php include('main.php') ?>
+    <?php require('main.php') ?>
 </body>
 </html>
