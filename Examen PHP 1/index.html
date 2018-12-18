@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EJERCICIO B</title>
+</head>
+<body>
+    <form action="./insert.php" method="POST" enctype="multipart/form-data">
+        <legend>Comentario</legend>
+        <label for="">Nombre:</label> <br>
+        <input type="text" name="nombre" id="nombre"> <br> <br>
+        <label for="">Apellidos:</label> <br>
+        <input type="text" name="apellidos" id="apellidos"> <br> <br>
+        <label for="">Comentarios:</label> <br>
+        <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea> <br> <br>
+        <input type="submit" value="Insertar Valores">
+    </form>
+
+    <br>
+
+
+    <a href="./view.php">Ver Comentarios</a>
+</body>
+</html>
